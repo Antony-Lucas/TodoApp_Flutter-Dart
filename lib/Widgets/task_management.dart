@@ -4,7 +4,10 @@ class CreateTask {
   late bool isChecked;
 
   CreateTask(
-      {required this.title,
+    {
+      required this.title,
       required this.description,
-      required this.isChecked});
+      required this.isChecked
+    }
+  );
 }
