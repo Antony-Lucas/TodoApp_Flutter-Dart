@@ -1,5 +1,7 @@
+import 'package:data_estructure_dart/api/check_user.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:data_estructure_dart/Widgets/task_management.dart';
+import 'package:data_estructure_dart/api/task_management.dart';
 import 'package:data_estructure_dart/Widgets/textField.dart';
 
 class TaskList extends StatefulWidget {
@@ -12,7 +14,16 @@ class TaskList extends StatefulWidget {
 class _TaskListState extends State<TaskList> {
   final titleController = TextEditingController();
   final descriptionContorller = TextEditingController();
+
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   List<CreateTask> manageTask = [];
+
+  logOut() async{
+    await firebaseAuth.signOut().then((value) => Navigator.pushReplacement(
+      context, 
+      MaterialPageRoute(builder: (context) => const CheckPage())));
+  }
+
   @override
   void dispose() {
     titleController.dispose();
@@ -29,7 +40,17 @@ class _TaskListState extends State<TaskList> {
   final bool check = false;
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false, 
+        title: const Text("Dashboard"),
+        actions: [
+          PopupMenuButton(itemBuilder: (context) => [
+            PopupMenuItem(child: TextButton(onPressed: (){logOut();}, child: const Text("Sair")),)
+          ])
+        ],
+      ),
+      body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 30),
         child: Column(
           children: [
@@ -147,6 +168,8 @@ class _TaskListState extends State<TaskList> {
               ],
             ),
           ],
-        ));
+        )
+      ),
+    );
   }
 }
