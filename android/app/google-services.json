@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "360919281227",
+    "project_id": "mine-to-do",
+    "storage_bucket": "mine-to-do.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360919281227:android:1799110853bdb4285c27ce",
+        "android_client_info": {
+          "package_name": "com.example.data_estructure_dart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360919281227-38dfh3vrud06iq5s7osr6runr15u6o8g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbMWlMncvdNne49KGgZD0e24TYtrEphnw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360919281227-38dfh3vrud06iq5s7osr6runr15u6o8g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "360919281227-akei5kuvaso09due70o2k0u4bs46e661.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dataEstructureDart"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
