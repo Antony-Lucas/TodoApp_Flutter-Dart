@@ -1,5 +1,6 @@
 import 'package:data_estructure_dart/Widgets/textField.dart';
 import 'package:data_estructure_dart/routes/list.dart';
+import 'package:data_estructure_dart/routes/signUp_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -30,7 +31,8 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           formTextField(hint: "Email",  controller: emailController, passField: false),
           formTextField(hint: "Senha", controller: passController, passField: true),
-          ElevatedButton(onPressed: (){login();}, child: const Text("Entrar"))
+          ElevatedButton(onPressed: (){login();}, child: const Text("Entrar")),
+          TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUp()));}, child: const Text("Criar conta"))
         ],
       ),
     );
